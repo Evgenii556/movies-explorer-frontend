@@ -1,4 +1,4 @@
-# movies-explorer-api
+# movies-explorer-frontend
 
 # Фронтенд дипломного проекта - сайта по поиску фильмов
 

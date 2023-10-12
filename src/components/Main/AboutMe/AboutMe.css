@@ -1,0 +1,173 @@
+.about {
+  padding: 57px 14px 70px 14px;
+  background-color: #fafafa;
+}
+
+.about__card {
+  display: grid;
+  grid-template-areas:
+    "photo"
+    "name"
+    "about"
+    "description"
+    "link";
+  grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+  row-gap: 20px;
+}
+
+.about__title {
+  margin: 0;
+  box-shadow: 0 1px 0px 0px #000;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -.72px;
+  padding-bottom: 28px;
+  margin-bottom: 60px;
+}
+
+.about__name {
+  grid-area: name;
+  margin: 0;
+  margin-top: 19px;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -1.2px;
+}
+
+.about__info {
+  grid-area: about;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.about__text {
+  grid-area: description;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.about__link {
+  grid-area: link;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+.about__link:hover {
+  opacity: .7;
+}
+
+.about__photo {
+  grid-area: photo;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 292px;
+  justify-self: center;
+  max-height: 352px;
+}
+
+@media screen and (min-width: 570px) {
+  .about {
+    padding: 2px 42px 76px 50px;
+  }
+
+  .about__title {
+    padding-bottom: 23px;
+    margin-bottom: 66px;
+    font-size: 22px;
+    letter-spacing: -.88px;
+  }
+
+  .about__card {
+    grid-template-areas:
+      "name photo"
+      "about photo"
+      "description photo"
+      "link photo";
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(20px, 36px));
+    column-gap: 49px;
+    row-gap: 0px;
+  }
+
+  .about__name {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.6px;
+    margin-top: 0;
+  }
+
+  .about__info {
+    font-size: 12px;
+    line-height: 18px;
+    align-self: center;
+  }
+
+  .about__text {
+    padding-top: 0px;
+    font-size: 12px;
+    line-height: 18px;
+    min-width: 355px;
+  }
+
+  .about__link {
+    align-self: center;
+    padding-top: 30px;
+  }
+
+  .about__photo {
+    min-width: 185px;
+    max-width: 255px;
+    max-height: 307px;
+    justify-self: end;
+  }
+
+}
+
+@media screen and (min-width: 950px) {
+  .about {
+    padding: 23px 70px 85px 70px;
+  }
+
+  .about__card {
+    row-gap: 0;
+    grid-template-columns: 620px 1fr;
+  }
+
+  .about__name {
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -2px;
+  }
+
+  .about__info {
+    font-size: 18px;
+    line-height: 20px;
+    align-self: auto;
+    margin-top: 42px;
+  }
+
+  .about__text {
+    padding-top: 13px;
+    font-size: 14px;
+    line-height: 22px;
+    width: 590px;
+  }
+
+  .about__photo {
+    max-width: 270px;
+    max-height: 327px;
+  }
+
+  .about__link {
+    padding-top: 81px;
+    margin-bottom: 8px;
+  }
+
+}

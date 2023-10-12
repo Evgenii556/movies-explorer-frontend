@@ -1,0 +1,28 @@
+.login {
+  margin: 0 auto;
+  max-width: 396px;
+  margin-bottom: 0;
+}
+
+.login__container {
+  max-width: 260px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 520px) {
+  .login__container {
+      padding-top: 167px;
+      max-width: 396px;
+      align-items: normal
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .login__container {
+    padding-top: 2px;
+  }
+}
