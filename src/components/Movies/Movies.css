@@ -1,7 +1,10 @@
-.movies{
+.movies {
   display: grid;
   background-color: #fafafa;
+  padding-right: 10px;
+  padding-left: 10px;
 }
+
 .movies__button {
   border-radius: 6px;
   justify-self: center;
@@ -24,12 +27,23 @@
 }
 
 @media screen and (min-width: 520px) {
+  .movies {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   .movies__button {
     width: 320px;
   }
 }
 
 @media screen and (min-width: 950px) {
+  .movies {
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-bottom: 7px;
+  }
+
   .movies-main__button-more {
     margin-top: 76px;
     margin-bottom: 71px;

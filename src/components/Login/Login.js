@@ -5,7 +5,6 @@ import InputField from '../InputField/InputField';
 function Login() {
 
   return (
-    <main className='main'>
       <div className='login'>
         <section className='login__container' aria-label='авторизация'>
           <Form
@@ -37,7 +36,6 @@ function Login() {
           </Form>
         </section>
       </div>
-    </main>
   );
 };
 

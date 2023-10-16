@@ -15,6 +15,10 @@
   padding: 0;
 }
 
+.form__logo-img:hover {
+  opacity: .7;
+}
+
 .form__container {
   width: 100%;
 }
@@ -32,12 +36,17 @@
   padding-top: 13px;
   padding-bottom: 15px;
   border: none;
+  color: #fff;
   text-align: center;
   border-radius: 3px;
   background: #3456F3;
   margin-top: 284px;
+  cursor: pointer;
 }
 
+.form__button:hover {
+  opacity: .8;
+}
 
 .form__link-container {
   margin-top: 3px;
@@ -78,14 +87,11 @@
 
   .form__button {
     font-size: 14px;
+    margin-top: 198px;
   }
 
   .form__title {
     margin-bottom: 39px;
-  }
-
-  .form__button {
-    margin-top: 198px;
   }
 
   .form__link {
@@ -95,6 +101,7 @@
   .form__link-title {
     font-size: 14px;
   }
+
   .register .form__button {
     margin-top: 127px;
   }

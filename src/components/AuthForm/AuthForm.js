@@ -19,7 +19,7 @@ function AuthForm({ text, button, question, title, link, children }) {
           id="authForm"
           name="authForm"
           noValidate
-          autocomplete="off"
+          autoComplete="off"
         >
           {children}
           <button className="form__button" type="submit">{button}</button>

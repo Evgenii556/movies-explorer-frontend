@@ -4,7 +4,7 @@ function FilterCheckbox() {
 
     return (
             <div className="filter">
-                <form className="filter__container">
+                <div className="filter__container">
                     <input
                         className="filter__checkbox"
                         type="checkbox"
@@ -12,7 +12,7 @@ function FilterCheckbox() {
                     />
                     <span className="filter__tumbler"></span>
                     <span className="filter__text">Короткометражки</span>
-                </form>
+                </div>
             </div>
     )
 }

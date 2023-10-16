@@ -1,0 +1,23 @@
+.saved-movies {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fafafa;
+}
+
+.saved-movies__error {
+  margin: 0;
+}
+
+@media screen and (min-width: 520px) {
+  .saved-movies {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .saved-movies {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}

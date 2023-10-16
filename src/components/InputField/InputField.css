@@ -12,7 +12,11 @@
   font-size: 14px;
   font-weight: 400;
   border-bottom: #e8e8e8 1px solid;
-  outline: none;
+}
+
+.auth__input:focus{
+  outline: .5px solid rgba(52, 86, 243, .5);
+  border-radius: 3px;
 }
 
 .auth__input::placeholder {

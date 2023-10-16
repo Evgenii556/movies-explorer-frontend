@@ -7,7 +7,7 @@ function MoviesCard({movie}) {
   return (
     <li className="card">
       <a
-        href={movie.trailerLink}
+        href={movie.trailerLink || 'https://yandex.ru/video/preview/13961353492771921746?text=мультик&path=yandex_search&parent-reqid=1697141606992881-1095689610004249428-balancer-l7leveler-kubr-yp-sas-150-BAL-183&from_type=xl'}
         className="card__trailer-link"
         target="_blank"
         rel="noreferrer"
@@ -23,9 +23,9 @@ function MoviesCard({movie}) {
         {movie.duration}
       </p>
       {
-        location  &&<button
+        location  && <button
           type="button"
-          className={`card__btn ${movie.saved ? 'card__btn_saved' : 'card__btn_save'}`}
+          className={`card__btn ${movie.saved ? 'card__btn_save' : 'card__btn_saved'}`}
         >
         </button>}
         {!location  && <button

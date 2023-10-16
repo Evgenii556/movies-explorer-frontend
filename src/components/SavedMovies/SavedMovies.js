@@ -6,10 +6,10 @@ import SearchForm from "../SearchForm/SearchForm";
 function SavedMovies() {
 
   return (
-    <section className='saved-movies'>
+    <section className='saved-movies' aria-label='movies'>
       <SearchForm />
       <MoviesCardList />
-       {<p className="saved-movies__error ">Ничего не найдено</p>}
+       {<p className="saved-movies__error">Ничего не найдено</p>}
     </section>
   )
 }

@@ -28,6 +28,10 @@
   margin-bottom: 0px;
 }
 
+.portfolio__item:hover {
+  opacity: .7;
+}
+
 .portfolio__item:last-of-type {
   border-bottom: 0;
 }
@@ -83,7 +87,8 @@
     margin-bottom: 18px;
   }
   .portfolio__list{
-    padding-top: 50px;
+    padding-top: 46px;
+    gap: 22px;
   }
 }
 

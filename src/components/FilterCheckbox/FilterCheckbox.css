@@ -12,6 +12,7 @@
   transition: all 0.4s linear;
   cursor: pointer;
   margin: 0;
+  margin-left: 15px;
 }
 
 .filter__checkbox {
@@ -78,7 +79,8 @@
 
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
+
   .filter__container {
     margin: 46px 0 0 0;
     width: 148px;

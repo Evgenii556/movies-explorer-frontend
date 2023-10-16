@@ -6,7 +6,6 @@ import InputField from '../InputField/InputField';
 function Register() {
 
   return (
-    <main className='main'>
       <div className='register'>
         <section className='register__container' aria-label='регистрация'>
           <Form
@@ -48,7 +47,6 @@ function Register() {
           </Form>
         </section>
       </div>
-    </main>
   );
 };
 

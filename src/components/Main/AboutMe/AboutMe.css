@@ -72,9 +72,9 @@
   max-height: 352px;
 }
 
-@media screen and (min-width: 570px) {
+@media screen and (min-width: 520px) {
   .about {
-    padding: 2px 42px 76px 50px;
+    padding: 2px 50px 76px 50px;
   }
 
   .about__title {
@@ -90,7 +90,7 @@
       "about photo"
       "description photo"
       "link photo";
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(20px, 36px));
     column-gap: 49px;
     row-gap: 0px;
@@ -113,7 +113,6 @@
     padding-top: 0px;
     font-size: 12px;
     line-height: 18px;
-    min-width: 355px;
   }
 
   .about__link {
