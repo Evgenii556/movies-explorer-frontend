@@ -90,8 +90,7 @@
       "about photo"
       "description photo"
       "link photo";
-     grid-template-columns: repeat(auto-fit,minmax(185px,1fr));
-    grid-templa
+    grid-template-columns: repeat(auto-fit,minmax(185px,1fr));
     grid-template-rows: repeat(auto-fill, minmax(20px, 36px));
     column-gap: 49px;
     row-gap: 0px;
