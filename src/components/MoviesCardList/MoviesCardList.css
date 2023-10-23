@@ -1,0 +1,49 @@
+.movie {
+  padding: 40px 0 10px 0;
+  display: grid;
+  background-color: #fafafa;
+}
+
+.movie__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  row-gap: 32px;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+}
+
+
+.movie__text {
+  font-size: 12px;
+  margin: 0;
+}
+
+
+@media screen and (min-width: 520px) {
+  .movie {
+    padding-top: 67px;
+  }
+
+  .movie__list {
+    row-gap: 47px;
+    column-gap: 30px;
+  }
+
+}
+
+@media screen and (min-width: 950px) {
+  .movie {
+    max-width: 1280px;
+    padding-top: 79px;
+    box-sizing: border-box;
+  }
+
+  .movie__list {
+    row-gap: 45px;
+    column-gap: 22px;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  }
+
+}
