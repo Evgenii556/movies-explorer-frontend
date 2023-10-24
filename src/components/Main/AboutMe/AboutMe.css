@@ -72,7 +72,7 @@
   max-height: 352px;
 }
 
-@media screen and (min-width: 520px) {
+@media screen and (min-width: 630px) {
   .about {
     padding: 2px 50px 76px 50px;
   }

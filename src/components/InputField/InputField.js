@@ -1,4 +1,5 @@
 import './InputField.css';
+import { PATTERN } from '../../utils/constants';
 
 function InputField(props) {
 
@@ -13,9 +14,11 @@ function InputField(props) {
         minLength={props.minLength}
         maxLength={props.maxLength}
         required
+        pattern={PATTERN[props.name]}
         autoComplete="off"
+        value={props.values[props.name] || ''}
         onChange={props.onChange} />
-      <span className="auth__error" id={`user-${props.id}-error`}></span>
+      <span className="auth__error" id={`user-${props.id}-error`}>{props.error[props.name]}</span>
     </div>
 
   );
