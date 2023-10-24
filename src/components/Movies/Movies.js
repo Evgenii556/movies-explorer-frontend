@@ -40,13 +40,17 @@ function Movies({ beatMovies, savedMovies, setMovies, addMovie, deleteMovie, get
     setIsChek(!isChek)
     if (!isChek) {
       const localShortMovieStore = JSON.parse(localStorage.getItem('short-movies'));
-      setNotFound(localShortMovieStore.length === 0 ? true : false);
-      setShowedMovies(JSON.parse(localStorage.getItem('short-movies')));
+      if (localShortMovieStore) {
+        setNotFound(localShortMovieStore.length === 0 ? true : false);
+        setShowedMovies(localShortMovieStore);
+      }
 
     } else if (isChek) {
       const localMovieStore = JSON.parse(localStorage.getItem('movies'));
-      setNotFound(localMovieStore.length === 0 ? true : false);
-      setShowedMovies(JSON.parse(localStorage.getItem('movies')));
+      if (localMovieStore) {
+        setNotFound(localMovieStore.length === 0 ? true : false);
+        setShowedMovies(localMovieStore);
+      }
     }
   }
 

@@ -10,10 +10,11 @@ function MoviesCardList({ movies, savedMovies, addMovie, deleteMovie }) {
   const isMovie = useLocation().pathname === '/movies'
   const width = useWidth();
   const [arr, setArr] = useState([]);
-  const [isAllShown, setIsAllShown] = useState(false);
+  const [isAllShown, setIsAllShown] = useState(true);
   const [renderParams, setRenderParams] = useState({});
 
   useEffect(() => {
+console.log('use');
     if (width <= SIZE_S) {
       setRenderParams(RENDER_S);
       setArr(movies.slice(0, renderParams.arrSize))
@@ -25,6 +26,9 @@ function MoviesCardList({ movies, savedMovies, addMovie, deleteMovie }) {
     if (width > SIZE_L) {
       setRenderParams(RENDER_L);
       setArr(movies.slice(0, renderParams.arrSize))
+    }
+    if(movies.length > renderParams.arrSize){
+      setIsAllShown(false)
     }
   }, [width, renderParams.arrSize, movies]);
 
@@ -40,6 +44,8 @@ function MoviesCardList({ movies, savedMovies, addMovie, deleteMovie }) {
     setArr(movies.slice(0, renderParams.arrSize))
   }
 
+  console.log(arr);
+
   return (
     <section className="movie" aria-label="films">
       <ul className="movie__list">
@@ -53,7 +59,7 @@ function MoviesCardList({ movies, savedMovies, addMovie, deleteMovie }) {
           deleteMovie={deleteMovie}
         />))}
       </ul>
-      {!isAllShown && isMovie &&
+      {!isAllShown && isMovie && arr.length>0 &&
           <button type="button"
             className="movies__button"
             onClick={handleAddRow}

@@ -27,7 +27,7 @@ function App() {
   const [beatMovies, setBeatMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isInfoToolTipOpened, setIsInfoToolTipOpened] = useState(false);
-  const [text,setText] = useState('')
+  const [text, setText] = useState('')
 
   const checkToken = (token) => {
     api.setToken(token);
@@ -129,10 +129,13 @@ function App() {
   }
 
   const handleRegister = ({ userName, email, password }) => {
-    Promise.all([api.register({ userName, password, email }), api.authorize({ email, password })])
-      .then(() => {
+    api.register({ userName, password, email })
+      .then(() => api.authorize({ email, password }))
+      .then((res) => {
         setIsLoggedIn(true);
+        localStorage.setItem('token', res._id);
         navigate('/movies');
+        setText('ok')
         setIsInfoToolTipOpened(true);
       })
       .catch((err) => {
@@ -144,7 +147,6 @@ function App() {
   }
 
   const handleAuthorize = ({ email, password }) => {
-    console.log({ email, password });
     api.authorize({ email, password })
       .then((res) => {
         setIsLoggedIn(true);

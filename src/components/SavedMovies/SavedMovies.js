@@ -28,13 +28,12 @@ function SavedMovies({ savedMovies, deleteMovie, getMovies, isLoading }) {
   }, [savedMovies])
 
   useEffect(() => {
-    setNotFound(movie.length === 0 ? true : false);
+    /* setNotFound(movie.length === 0 ? true : false); */
   }, [movie])
 
   function toggleChek() {
     setIsChek(!isChek)
     if (isChek) {
-      console.log(resultMovies);
       setMovie(resultMovies)
     } else if (!isChek) {
       setMovie(filterShortMovies(resultMovies))
@@ -44,18 +43,14 @@ function SavedMovies({ savedMovies, deleteMovie, getMovies, isLoading }) {
 
   function search(key) {
     const res = sortMovies(savedMovies, key)
-    /* setResultMovies(sortMovies(savedMovies, key)) */
     setResultMovies(res)
     if (!isChek) {
       setMovie(res)
       setNotFound(res.length === 0 ? true : false);
-      console.log(res.length === 0, 'jj');
-      console.log(notFound);
-
     } else if (isChek) {
       setMovie(filterShortMovies(res))
       setNotFound(filterShortMovies(res).length === 0 ? true : false);
-      console.log(notFound);
+
     }
     setNotFound(movie.length === 0 ? true : false);
   }
