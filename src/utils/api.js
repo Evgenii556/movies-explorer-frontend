@@ -18,6 +18,8 @@ class Api {
   }
 
   register({email, password, userName}) {
+    console.log(userName, email, password);
+    console.log(api);
     return fetch(this._url + '/signup', {
       method: 'POST',
       headers: this._headers,

@@ -2,7 +2,7 @@ import './AuthForm.css';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 
-function AuthForm({ text, button, question, title, link, onSubmit, isValid, children }) {
+function AuthForm({ text, button, question, title, link, onSubmit, isValid, children, isBlocked }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -29,10 +29,10 @@ function AuthForm({ text, button, question, title, link, onSubmit, isValid, chil
         >
           {children}
           <button
-            className={`form__button ${!isValid ? 'form__button_disabled' : ''}`}
+            className={`form__button ${!isValid || isBlocked? 'form__button_disabled' : ''}`}
             type="submit"
             form="authForm"
-            disabled={!isValid}
+            disabled={!isValid || isBlocked}
           >
             {button}
           </button>

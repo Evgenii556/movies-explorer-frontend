@@ -22,6 +22,7 @@ function App() {
   const navigate = useNavigate();
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isBlocked, setIsBlocked] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [movies, setMovies] = useState([]);
   const [beatMovies, setBeatMovies] = useState([]);
@@ -36,7 +37,7 @@ function App() {
         if (res) {
           setIsLoggedIn(true);
           setCurrentUser(res);
-          navigate(location)
+          location === '/' ? navigate('/movies') : navigate(location);
         } else {
           localStorage.removeItem('token');
           setIsLoggedIn(false);
@@ -60,7 +61,6 @@ function App() {
     [isLoggedIn]);
 
   const handleMovieDelete = (id) => {
-    console.log(id);
     api.deleteCard(id)
       .then(() => {
         setMovies((movies) =>
@@ -74,6 +74,7 @@ function App() {
   }
 
   const handleUpdateUser = (data) => {
+    setIsBlocked(true);
     api.editUserInfo(data)
       .then((newData) => {
         setCurrentUser(newData);
@@ -84,7 +85,10 @@ function App() {
         console.log(err);
         setText(null)
         setIsInfoToolTipOpened(true)
-      });
+      })
+      .finally(() => {
+        setIsBlocked(false);
+      })
   }
 
   const handleAddMovie = (data) => {
@@ -100,6 +104,7 @@ function App() {
   }
 
   const handleGetMovies = () => {
+    setIsBlocked(true);
     setLoading(true);
     api.getMovies()
       .then((movieList) => {
@@ -110,10 +115,14 @@ function App() {
         setText(null)
         setIsInfoToolTipOpened(true)
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+        setIsBlocked(false);
+      });
   }
 
   const handleGetBeatMovies = () => {
+    setIsBlocked(true);
     setLoading(true);
     return beatfilm.getMovies()
       .then((movieList) => {
@@ -125,10 +134,14 @@ function App() {
         setText(null)
         setIsInfoToolTipOpened(true)
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+        setIsBlocked(false);
+      });
   }
 
   const handleRegister = ({ userName, email, password }) => {
+    setIsBlocked(true);
     api.register({ userName, password, email })
       .then(() => api.authorize({ email, password }))
       .then((res) => {
@@ -142,11 +155,15 @@ function App() {
         console.log(err);
         setText(null)
         setIsInfoToolTipOpened(true)
-      });
+      })
+      .finally(() => {
+        setIsBlocked(false);
+      })
 
   }
 
   const handleAuthorize = ({ email, password }) => {
+    setIsBlocked(true);
     api.authorize({ email, password })
       .then((res) => {
         setIsLoggedIn(true);
@@ -159,7 +176,11 @@ function App() {
         console.log(err);
         setText(null)
         setIsInfoToolTipOpened(true)
-      });
+      })
+      .finally(() => {
+        setIsBlocked(false);
+      }
+      )
   }
 
   const handleSingOut = () => {
@@ -194,6 +215,7 @@ function App() {
                   deleteMovie={handleMovieDelete}
                   getBeatMovies={handleGetBeatMovies}
                   isLoading={loading}
+                  isBlocked={isBlocked}
                 />
               } isLoggedIn={isLoggedIn} />
           } />
@@ -206,6 +228,7 @@ function App() {
                   deleteMovie={handleMovieDelete}
                   getMovies={handleGetMovies}
                   isLoading={loading}
+                  isBlocked={isBlocked}
                 />
               } isLoggedIn={isLoggedIn} />
           } />
@@ -215,11 +238,28 @@ function App() {
                 <Profile
                   updateUser={handleUpdateUser}
                   signOut={handleSingOut}
+                  isBlocked={isBlocked}
                 />
               } isLoggedIn={isLoggedIn} />
           } />
-          <Route path='/signin' element={<Login handleLogin={handleAuthorize} />} />
-          <Route path='/signup' element={<Register handleRegister={handleRegister} />} />
+          <Route path='/signin' element={
+            <ProtectedRoute
+              element={
+                <Login
+                  handleLogin={handleAuthorize}
+                  isBlocked={isBlocked}
+                />
+              } isLoggedIn={isLoggedIn} />
+          } />
+          <Route path='/signup' element={
+            <ProtectedRoute
+              element={
+                <Register
+                  handleRegister={handleRegister}
+                  isBlocked={isBlocked}
+                />
+              } isLoggedIn={isLoggedIn} />
+          } />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>

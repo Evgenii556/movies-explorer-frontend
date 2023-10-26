@@ -3,7 +3,7 @@ import Form from '../AuthForm/AuthForm';
 import InputField from '../InputField/InputField';
 import { useForm } from '../UseForm/UseForm';
 
-function Login({ handleLogin }) {
+function Login({ handleLogin, isBlocked }) {
 
   const handleSubmit = (data) => {
     handleLogin(data);
@@ -27,6 +27,7 @@ function Login({ handleLogin }) {
           link='/signup'
           onSubmit={() => handleSubmit(values)}
           isValid={isValid}
+          isBlocked={isBlocked}
         >
           <InputField
             id="email"
@@ -38,6 +39,7 @@ function Login({ handleLogin }) {
             values={values}
             error={errors}
             onChange={handleChange}
+            isBlocked={isBlocked}
           />
 
           <InputField
@@ -46,11 +48,12 @@ function Login({ handleLogin }) {
             title="Пароль"
             type="password"
             placeholder="Пароль"
-            minLength="6"
+            minLength="8"
             maxLength="20"
             values={values}
             error={errors}
             onChange={handleChange}
+            isBlocked={isBlocked}
           />
         </Form>
       </section>

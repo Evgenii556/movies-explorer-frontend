@@ -36,6 +36,11 @@
   box-sizing: border-box;
   margin: 0;
   padding-bottom: 30px;
+  cursor: pointer;
+}
+
+.not-found__link:hover {
+  opacity: .7;
 }
 
 @media screen and (min-width: 520px) {

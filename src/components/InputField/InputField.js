@@ -17,7 +17,8 @@ function InputField(props) {
         pattern={PATTERN[props.name]}
         autoComplete="off"
         value={props.values[props.name] || ''}
-        onChange={props.onChange} />
+        onChange={props.onChange}
+        readOnly={props.isBlocked}/>
       <span className="auth__error" id={`user-${props.id}-error`}>{props.error[props.name]}</span>
     </div>
 

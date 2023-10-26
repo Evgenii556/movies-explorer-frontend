@@ -3,7 +3,7 @@ import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import { useState, useEffect, } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function SearchForm({ isChek, sortMovies, toggleChek }) {
+function SearchForm({ isChek, sortMovies, toggleChek,isBlocked }) {
 
   const [key, setKey] = useState('');
   const [noText, setNoText] = useState(false);
@@ -41,7 +41,7 @@ function SearchForm({ isChek, sortMovies, toggleChek }) {
             onChange={handleTextChange}
             value={key}
           />
-          <button className='search__button' type='submit' />
+          <button className='search__button' type='submit' disabled={isBlocked} />
         </div>
         <FilterCheckbox
           isChek={isChek}

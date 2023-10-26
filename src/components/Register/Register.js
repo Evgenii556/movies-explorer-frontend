@@ -3,7 +3,7 @@ import Form from '../AuthForm/AuthForm';
 import InputField from '../InputField/InputField';
 import { useForm } from '../UseForm/UseForm';
 
-function Register({ handleRegister }) {
+function Register({ handleRegister, isBlocked }) {
 
   const handleSubmit = (data) => {
     handleRegister(data);
@@ -28,6 +28,7 @@ function Register({ handleRegister }) {
           link='/signin'
           onSubmit={() => handleSubmit(values)}
           isValid={isValid}
+          isBlocked={isBlocked}
         >
           <InputField
             name="userName"
@@ -40,6 +41,7 @@ function Register({ handleRegister }) {
             values={values}
             error={errors}
             onChange={handleChange}
+            isBlocked={isBlocked}
           />
 
           <InputField
@@ -52,6 +54,7 @@ function Register({ handleRegister }) {
             values={values}
             error={errors}
             onChange={handleChange}
+            isBlocked={isBlocked}
           />
 
           <InputField
@@ -65,6 +68,7 @@ function Register({ handleRegister }) {
             values={values}
             error={errors}
             onChange={handleChange}
+            isBlocked={isBlocked}
           />
         </Form>
       </section>

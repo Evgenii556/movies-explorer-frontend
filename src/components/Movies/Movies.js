@@ -5,7 +5,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import Preloader from '../Preloader/Preloader';
 import { filterShortMovies, sortMovies } from '../../utils/searcher';
 
-function Movies({ beatMovies, savedMovies, setMovies, addMovie, deleteMovie, getBeatMovies, isLoading }) {
+function Movies({ beatMovies, savedMovies, setMovies, addMovie, deleteMovie, getBeatMovies, isLoading, isBlocked }) {
 
   const checkPosition = localStorage.getItem('checkbox');
   /*  const [firstSearch, setFirstSearch] = useState(true); */
@@ -96,6 +96,7 @@ function Movies({ beatMovies, savedMovies, setMovies, addMovie, deleteMovie, get
         getBeatMovies={getBeatMovies}
         sortMovies={search}
         toggleChek={toggleChek}
+        isBlocked={isBlocked}
       />
       {isLoading && <Preloader />}
       {!isLoading && <MoviesCardList
