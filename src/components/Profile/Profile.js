@@ -90,8 +90,8 @@ function Profile({ updateUser, signOut, isBlocked }) {
           {isEditProfile ?
             <>
               <button type='button'
-                className={`button profile__submit ${isValid ? 'form__button_disabled' : ''}`}
-                disabled={(!isValid && noChanged && isEditProfile) || isBlocked}
+                className={`button profile__submit ${(!isValid || noChanged || !isEditProfile) || isBlocked ? 'form__button_disabled' : ''}`}
+                disabled={(!isValid || noChanged || !isEditProfile) || isBlocked}
                 onClick={handleSubmit}
               >
                 Сохранить
@@ -101,8 +101,8 @@ function Profile({ updateUser, signOut, isBlocked }) {
             <>
               <button
                 type='button'
-                className={`profile__button ${isValid && !noChanged ? '' : 'profile__button_disabled'}`}
-                disabled={!isValid && noChanged}
+                className={`profile__button ${!isValid || noChanged ? 'profile__button_disabled' : ''}`}
+                disabled={!isValid || noChanged}
                 onClick={() => setIsEditProfile((prev) => !prev)}>
                 Редактировать
               </button>

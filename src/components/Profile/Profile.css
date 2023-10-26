@@ -119,7 +119,7 @@
   text-align: center;
   font-size: 13px;
   font-weight: 400;
-
+  cursor: pointer;
 }
 
 .profile__button_disabled {
