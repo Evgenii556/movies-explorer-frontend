@@ -20,7 +20,8 @@
   justify-content: center;
   align-items: center;
   min-width: 260px;
-  gap: 17px;
+  /* gap: 17px; */
+  gap: 5px;
 }
 
 .profile__input-container:first-of-type {
@@ -77,8 +78,7 @@
 }
 
 .profile__error {
-  width: 100%;
-  min-height: 186px;
+  max-width: 90%;
   color: #FF004C;
   text-align: center;
   font-family: Inter;
@@ -119,7 +119,11 @@
   text-align: center;
   font-size: 13px;
   font-weight: 400;
+  cursor: pointer;
+}
 
+.profile__button_disabled {
+  color: #c2c2c2;
 }
 
 .profile__button:hover {
@@ -153,9 +157,9 @@
     margin-top: 123px;
   }
 
-  .profile__error {
+/*   .profile__error {
     margin-top: 92px;
-  }
+  } */
 }
 
 @media screen and (min-width: 950px) {

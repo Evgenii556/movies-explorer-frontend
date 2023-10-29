@@ -36,6 +36,13 @@
   width: 100%;
 }
 
+.search__notext {
+  position: relative;
+  font-size: 14px;
+  color: #FF004C;
+  top: -50px;
+}
+
 .search__input:focus {
   outline: .5px dotted rgba(52, 86, 243, .5);
   border-radius: 3px;
@@ -91,6 +98,10 @@
     margin-bottom: 16px;
     gap: 0;
     padding-left: 5px;
+  }
+
+  .search__notext {
+    top: 10px;
   }
 
   .search__container {

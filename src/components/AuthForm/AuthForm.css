@@ -48,6 +48,11 @@
   opacity: .8;
 }
 
+.form__button_disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+}
+
 .form__link-container {
   margin-top: 3px;
   margin-left: auto;

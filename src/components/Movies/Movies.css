@@ -22,6 +22,8 @@
   border: none;
 }
 
+.movies__notfound {}
+
 .movies__button:hover {
   opacity: .8;
 }
